@@ -42,6 +42,8 @@ class EffectViewController: UIViewController {
     let filterName = "CIpotoEffectMono"
     
     let rotate = originalImage!.imageOrientation
+    
+    let inputImage = CIImage(image: originalImage!)
     //回転角度の取得
     
     let effectFilter = CIFilter(name: filterName)!
@@ -65,10 +67,12 @@ class EffectViewController: UIViewController {
   
   @IBAction func sharButtonAction(_ sender: Any) {
     
-    let controller = UIActivityViewController(activityItems: [effectImage.image!], applicationActivities: nil)
-  }
-  controller.popoverPre
+  let controller = UIActivityViewController(activityItems: [effectImage.image!], applicationActivities: nil)
   
+  controller.popoverPresentationController?.sourceView = view
+    
+    present(controller, animated: true, completion: nil)
+  }
   @IBAction func closeButtonAction(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
