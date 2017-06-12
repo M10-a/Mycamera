@@ -63,13 +63,21 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
     func UIImagePickerController(_ picker: UIImagePickerController, didFinispickingMadiaWediawithInfo info:[
       String : Any]){
       
-      pictureimage.image = info[UIImagePickerControllerOriginalImage]as?UIImage
+      captureImage = info[UIImagePickerControllerOriginalImage]as?UIImage
       //as? キャスト、型を変換する UIimage
       //！だと落ちる　コンパイルが通らない
     //
-      dismiss(animated: true, completion: nil)
+      dismiss(animated: true, completion: {
+        self.performSegue(withIdentifier: "showEffectView", sender: nil)
+      })
       //presentと対義語
     }
+    
+    var captureImage : UIImage?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+    let nextViewcontroller = segue.destination as! EffectViewController
+      nextViewcontroller.originalImage = captureImage}
     
   }
 }
