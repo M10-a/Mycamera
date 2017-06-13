@@ -43,6 +43,7 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
     }else{
     print("カメラが起動できません")}
   }
+  
   @IBAction func SNSButtonAction(_ sender: Any) {
     
     if let shareImage = pictureimage.image{
@@ -59,27 +60,26 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
       present(controller, animated: true, completion: nil)
       //閉じる処理がないのディディスミスがない
     }
-    var captureImage : UIImage?
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-      let nextViewcontroller = segue.destination as! EffectViewController
-      
-      nextViewcontroller.originalImage = captureImage
-    }
-    
-    
-    func UIImagePickerController(_ picker: UIImagePickerController, didFinispickingMadiaWediawithInfo info:[
+
+  
+    func ImagePickerController(_ picker: UIImagePickerController, didFinishpickingMediaWithInfo info:[
       String : Any]){
       
       captureImage = info[UIImagePickerControllerOriginalImage] as? UIImage
       //as? キャスト、型を変換する UIimage
       //！だと落ちる　コンパイルが通らない
-    //
       dismiss(animated: true, completion: {
-        self.performSegue(withIdentifier: "showEffectView", sender: nil)
+        self.performSegue(withIdentifier: "showEffectView", sender:  nil)
       })
       //presentと対義語
-    
+    }
+      var captureImage : UIImage?
+      
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        let nextViewcontroller = segue.destination as! EffectViewController
+        
+        nextViewcontroller.originalImage = captureImage
   }
   }
 }
