@@ -26,17 +26,41 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
 
   @IBAction func cameraButtonAction(_ sender: Any) {
     
-//    let alertController = UIAlertController(title: "確認", message: "選択してください", preferredStyle: .actionSheet)
-//    
-//    let comeraAction = UIAlertAction(title: "カメラ", stile .df)
+    let alertController = UIAlertController(title: "確認", message: "選択してください", preferredStyle: .actionSheet)
     
+    if UIImagePickerController.isSourceTypeAvailable(.camera){
+    
+      let cameraAction = UIAlertAction(title: "カメラ", style: .default, handler: {(action:UIAlertAction) in
+        
+        let ipc : UIImagePickerController = UIImagePickerController()
+        ipc.sourceType = .camera
+        ipc.present(ipc, animated: true, completion: nil)
+      })
+      if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+    
+        let photoLibraryAction = UIAlertAction(title: "フォトライブラリー", style: .default, handler: {(acotion:UIAlertAction) in
+          
+          let ipc : UIImagePickerController = UIImagePickerController()
+          ipc.sourceType = .photoLibrary
+          ipc.delegate = self
+          self.present(ipc, animated: true,completion: nil)
+        })
+      alertController.addAction(photoLibraryAction)
+        
+      }
+      
+    let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+    
+    alertController.popoverPresentationController?.sourceView = view
+    
+    present(alertController,animated: true, completion: nil)
+    
+    }
     
     if UIImagePickerController.isSourceTypeAvailable(.camera){
     print("カメラは利用できます")
       let ipc = UIImagePickerController()
-      
       ipc.sourceType = .camera
-      
       ipc.delegate = self
       
       present(ipc, animated: true, completion: nil)
@@ -62,7 +86,7 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
     }
 
   
-    func ImagePickerController(_ picker: UIImagePickerController, didFinishpickingMediaWithInfo info:[
+    func ImagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[
       String : Any]){
       
       captureImage = info[UIImagePickerControllerOriginalImage] as? UIImage

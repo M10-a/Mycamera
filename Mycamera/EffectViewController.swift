@@ -35,11 +35,29 @@ class EffectViewController: UIViewController {
     */
   @IBOutlet weak var effectImage: UIImageView!
   
+  let filterArray = ["CIphotoEffectMono",
+                     "CIphotoEffectChrome",
+                     "CIphotoEffectFade",
+                     "CIphotoEffectInsutant",
+                     "CIphotoEffectNoir",
+                     "CIphotoEffectProcess",
+                     "CIphotoEffectTonal",
+                     "CIphotoEffectTransfer",
+                     "CISepiaTone"
+  ]
+  var filterSelectNumber = 0
+  
   var originalImage :UIImage?
   //オプショナル型
 
   @IBAction func effectButtonAction(_ sender: Any) {
-    let filterName = "CIpotoEffectMono"
+    let filterName = filterArray[filterSelectNumber]
+    
+    filterSelectNumber += 1
+    
+    if filterSelectNumber == filterArray.count{
+    filterSelectNumber = 0
+    }
     
     let rotate = originalImage!.imageOrientation
     
