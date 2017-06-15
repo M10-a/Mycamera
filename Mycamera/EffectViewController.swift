@@ -55,7 +55,7 @@ class EffectViewController: UIViewController {
     
     filterSelectNumber += 1
     
-    if filterSelectNumber == filterArray.count{
+    if filterSelectNumber == filterArray.count {
     filterSelectNumber = 0
     }
     

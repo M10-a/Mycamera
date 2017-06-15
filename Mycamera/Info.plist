@@ -22,7 +22,7 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>Privascy - Photos Library Usage Desction</key>
+	<key>Privascy - Photos Library Usage Description</key>
 	<string>フォトリブラリにアクセスします</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -45,7 +45,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>privacy - Camera Usage Desription</key>
+	<key>NSCameraUsageDescription</key>
 	<string>カメラにアクセスします</string>
 </dict>
 </plist>

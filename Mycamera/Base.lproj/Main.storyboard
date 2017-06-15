@@ -52,7 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="pictureimage" destination="T8D-Ca-gLo" id="vTS-eB-Ri8"/>
-                        <segue destination="EiF-dm-VwB" kind="show" identifier="showEffectView" id="adu-Fn-PYX"/>
+                        <segue destination="EiF-dm-VwB" kind="presentation" identifier="showEffectView" modalTransitionStyle="coverVertical" id="adu-Fn-PYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
