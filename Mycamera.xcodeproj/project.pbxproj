@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3541C4981EF2AE5D003B4362 /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3541C4971EF2AE5D003B4362 /* usa.png */; };
 		35B6896B1EEAC0980099B42A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B6896A1EEAC0980099B42A /* AppDelegate.swift */; };
 		35B6896D1EEAC0980099B42A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B6896C1EEAC0980099B42A /* ViewController.swift */; };
 		35B689701EEAC0980099B42A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B6896E1EEAC0980099B42A /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3541C4971EF2AE5D003B4362 /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usa.png; sourceTree = "<group>"; };
 		35B689671EEAC0980099B42A /* Mycamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mycamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B6896A1EEAC0980099B42A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35B6896C1EEAC0980099B42A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				35B689711EEAC0980099B42A /* Assets.xcassets */,
 				35B689731EEAC0980099B42A /* LaunchScreen.storyboard */,
 				35B689761EEAC0980099B42A /* Info.plist */,
+				3541C4971EF2AE5D003B4362 /* usa.png */,
 			);
 			path = Mycamera;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 				35B689751EEAC0980099B42A /* LaunchScreen.storyboard in Resources */,
 				35B689721EEAC0980099B42A /* Assets.xcassets in Resources */,
 				35B689701EEAC0980099B42A /* Main.storyboard in Resources */,
+				3541C4981EF2AE5D003B4362 /* usa.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
