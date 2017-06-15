@@ -47,7 +47,5 @@
 	</array>
 	<key>privacy - Camera Usage Desription</key>
 	<string>カメラにアクセスします</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>フォトライブラリーにアクセスします</string>
 </dict>
 </plist>

@@ -36,6 +36,9 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
         ipc.sourceType = .camera
         ipc.present(ipc, animated: true, completion: nil)
       })
+      alertController.addAction(cameraAction)
+      
+    }
       if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
     
         let photoLibraryAction = UIAlertAction(title: "フォトライブラリー", style: .default, handler: {(acotion:UIAlertAction) in
@@ -47,13 +50,13 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
         })
       alertController.addAction(photoLibraryAction)
         
-      }
       
-    let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+      let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
     
     alertController.popoverPresentationController?.sourceView = view
     
     present(alertController,animated: true, completion: nil)
+        alertController.addAction(cancelAction)
     
     }
     
@@ -82,12 +85,12 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
       //Ipad 特有の設定
       
       present(controller, animated: true, completion: nil)
-      //閉じる処理がないのディディスミスがない
+      //閉じる処理がないのディスミスがない
     }
+  }
 
   
-    func ImagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[
-      String : Any]){
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[ String : Any]){
       
       captureImage = info[UIImagePickerControllerOriginalImage] as? UIImage
       //as? キャスト、型を変換する UIimage
@@ -102,8 +105,6 @@ class ViewController: UIViewController , UINavigationControllerDelegate , UIImag
       override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         let nextViewcontroller = segue.destination as! EffectViewController
-        
         nextViewcontroller.originalImage = captureImage
-  }
   }
 }
